@@ -60,6 +60,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "vite --config examples/playground/vite.config.ts",
+    "build:demo": "vite build --config examples/playground/vite.config.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",

@@ -6,6 +6,12 @@ const src = (path: string) => fileURLToPath(new URL(`../../src/${path}`, import.
 
 export default defineConfig({
   root: fileURLToPath(new URL('.', import.meta.url)),
+  // Relative asset paths so the built demo works under GitHub Pages' /react-data-table/ subpath
+  base: './',
+  build: {
+    outDir: fileURLToPath(new URL('../../demo-dist', import.meta.url)),
+    emptyOutDir: true,
+  },
   plugins: [react()],
   resolve: {
     alias: [

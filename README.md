@@ -7,6 +7,10 @@ Simple by default. Powerful when needed.
 [![bundle size](https://img.shields.io/bundlephobia/minzip/@corinovate/react-data-table)](https://bundlephobia.com/package/@corinovate/react-data-table)
 [![license](https://img.shields.io/npm/l/@corinovate/react-data-table.svg)](./LICENSE)
 
+<p>
+  <a href="https://corinovate.github.io/react-data-table/"><img src="https://img.shields.io/badge/View_live_demo-%E2%86%92-4f46e5?style=for-the-badge" alt="View live demo" height="32"></a>
+</p>
+
 ![A customers table with search, a status filter, status badges, row actions and pagination](./docs/images/hero.png)
 
 ```tsx
@@ -750,7 +754,7 @@ Types: `Column`, `DataTableProps`, `RowAction`, `SortItem`, `TableQuery`, `Theme
 />
 ```
 
-**Run the playground locally:** clone the repo, then `npm install` and `npm run dev`. It shows every theme, dark mode, card view and a simulated server.
+**Try it live:** the [online demo](https://corinovate.github.io/react-data-table/) shows every theme, dark mode, card view and a simulated server. To run the same playground locally, clone the repo, then `npm install` and `npm run dev`.
 
 ## Troubleshooting
 
