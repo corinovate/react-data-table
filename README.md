@@ -7,6 +7,8 @@ Simple by default. Powerful when needed.
 [![bundle size](https://img.shields.io/bundlephobia/minzip/@corinovate/react-data-table)](https://bundlephobia.com/package/@corinovate/react-data-table)
 [![license](https://img.shields.io/npm/l/@corinovate/react-data-table.svg)](./LICENSE)
 
+![A customers table with search, a status filter, status badges, row actions and pagination](./docs/images/hero.png)
+
 ```tsx
 <DataTable data={users} columns={columns} />
 ```
@@ -153,6 +155,10 @@ const columns = [
 
 Default cell formatting: empty values show a muted `—`, booleans show `Yes`/`No`, dates use `toLocaleDateString()`, arrays are joined with commas.
 
+Users can show and hide columns from the built-in **Columns** menu. Columns with `hidden: true` start unchecked; `hideable: false` keeps a column out of the menu, and `columnToggle={false}` removes the menu entirely.
+
+![The Columns menu open, listing every column with a checkbox; "Joined" is unchecked](./docs/images/column-menu.png)
+
 ## Search
 
 Search is on by default and matches every word across all searchable columns, case-insensitively (`"jane admin"` finds Jane in the Admin role).
@@ -174,6 +180,8 @@ const [search, setSearch] = useState('');
 ## Sorting
 
 Click a header to sort ascending, again for descending, a third time to clear. **Shift-click** (or Shift+Enter) adds more columns for multi-column sorting; a small number shows each column's priority.
+
+![Sorted by Plan, then by Revenue descending, with priority numbers 1 and 2 next to the headers](./docs/images/sorting.png)
 
 ```tsx
 <DataTable data={users} defaultSort={[{ key: 'createdAt', direction: 'desc' }]} />
@@ -240,6 +248,8 @@ The built-in `<Pagination>` component is also exported if you want to place it e
   )}
 />
 ```
+
+![Three rows selected; a bar above the table shows "3 selected", Clear selection, and Export / Delete bulk actions](./docs/images/selection.png)
 
 - The header checkbox selects the current page. A **"Select all N"** link then selects every matching row (client-side data).
 - A bar with the selected count, **Clear selection** and your `bulkActions` appears while rows are selected.
@@ -308,6 +318,8 @@ const columns = [
 />
 ```
 
+![A row expanded to show customer ID, country, join date and lifetime value underneath it](./docs/images/expanded.png)
+
 Rows can also be expanded from the keyboard with Enter or the right arrow. Controlled: `expandedKeys` + `onExpandedChange`.
 
 ## Loading, empty and error states
@@ -326,6 +338,8 @@ Rows can also be expanded from the keyboard with Enter or the right arrow. Contr
 
 When a search has no results, the table shows "No results for …" with a **Clear search** button.
 
+![The table after searching "zzzz": an empty state reading No results for "zzzz" with a Clear search button](./docs/images/no-results.png)
+
 ## Themes
 
 ```tsx
@@ -340,6 +354,8 @@ When a search has no results, the table shows "No results for …" with a **Clea
 | `compact` | Dense spreadsheet-like rows with grid lines, for reports            |
 | `dark`    | A dedicated deep-navy dark theme (always dark)                      |
 | `glass`   | Frosted translucent surfaces; best on colorful or image backgrounds |
+
+![The same table rendered in all six built-in themes: default, minimal, modern, compact, dark and glass](./docs/images/themes.png)
 
 Themes control more than colors: border radius, spacing, row height, typography, header style, borders, hover and stripe colors, shadows, buttons, badges, pagination and overall density. They are design tokens applied as CSS variables.
 
@@ -405,6 +421,8 @@ Every theme has a dark variant.
 
 `colorMode` defaults to `light`. The `dark` theme is always dark regardless of `colorMode`.
 
+![The default theme with colorMode="dark"](./docs/images/dark-mode.png)
+
 ## Responsive behavior
 
 The table responds to **its own width** (not the viewport), so it behaves correctly inside sidebars, modals and grid layouts.
@@ -420,6 +438,10 @@ The table responds to **its own width** (not the viewport), so it behaves correc
 | `cards`            | Each row becomes a card with label/value pairs; a "Sort by" menu appears  |
 
 In every mode, columns with `hideOnMobile: true` are hidden below the breakpoint, and pagination switches to a compact "Page X of Y" layout. In card view, the column with `primary: true` (or the first column) becomes the card title.
+
+<p align="center">
+  <img src="./docs/images/cards.png" width="360" alt="Card view at phone width: each customer is a card with label/value pairs, row actions, and a Sort by menu in the toolbar">
+</p>
 
 **Sticky header:** `stickyHeader` keeps the header visible while the body scrolls inside `maxHeight` (default `70vh`).
 
