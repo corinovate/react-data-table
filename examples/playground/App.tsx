@@ -59,7 +59,13 @@ export function App() {
       <header className="pg-header">
         <div>
           <h1>@corinovate/react-data-table</h1>
-          <p>Simple by default. Powerful when needed.</p>
+          <p>A lightweight React data table for business apps. Simple by default. Powerful when needed.</p>
+          <p className="pg-links">
+            <code>npm install @corinovate/react-data-table</code>
+            <a href="https://www.npmjs.com/package/@corinovate/react-data-table">npm</a>
+            <a href="https://github.com/corinovate/react-data-table">GitHub</a>
+            <a href="https://github.com/corinovate/react-data-table#readme">Docs</a>
+          </p>
         </div>
         <div className="pg-controls">
           <label>
