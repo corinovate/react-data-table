@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.pg {
+  min-height: 100vh;
+  padding: 24px 16px 64px;
+  color: #101828;
+  background: #f4f5f7;
+  transition: background 200ms ease;
+}
+
+.pg[data-dark] {
+  color: #e8eaee;
+  background: #0b0d11;
+}
+
+.pg[data-glass] {
+  background:
+    radial-gradient(at 15% 10%, #c4b5fd 0, transparent 45%),
+    radial-gradient(at 85% 20%, #93c5fd 0, transparent 45%),
+    radial-gradient(at 50% 90%, #f9a8d4 0, transparent 50%),
+    #eef2ff;
+}
+
+.pg[data-glass][data-dark] {
+  background:
+    radial-gradient(at 15% 10%, #4c1d95 0, transparent 45%),
+    radial-gradient(at 85% 20%, #1e3a8a 0, transparent 45%),
+    radial-gradient(at 50% 90%, #831843 0, transparent 50%),
+    #0b0d11;
+}
+
+.pg-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto 24px;
+}
+
+.pg-header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.pg-header p {
+  margin: 4px 0 0;
+  opacity: 0.7;
+}
+
+.pg-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pg-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pg-controls .pg-check {
+  flex-direction: row;
+  align-items: center;
+  align-self: flex-end;
+  height: 32px;
+}
+
+.pg-controls select {
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 8px;
+}
+
+.pg-main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pg-main h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.pg-log {
+  margin: 10px 0 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.pg-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pg-person strong {
+  display: block;
+  font-weight: 600;
+}
+
+.pg-person small {
+  display: block;
+  color: var(--cdt-text-muted);
+}
+
+.pg-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cdt-accent);
+  background: color-mix(in srgb, var(--cdt-accent) 12%, transparent);
+  border-radius: 999px;
+}
+
+.pg-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.pg-details span {
+  display: block;
+  font-size: 12px;
+  color: var(--cdt-text-muted);
+}
